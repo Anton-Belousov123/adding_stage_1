@@ -26,8 +26,9 @@ headers_kamran_shop = {
 def test_upload_is_ok(article, name, sku) -> bool:
     """Функция предназначенная для проверки ситуации: сможет ли товар, загрузится без ошибок"""
     response = _upload_item(sku=sku, name=name, article=article, headers=headers_test_shop)
-    time.sleep(90)
+    time.sleep(60)
     status = _get_upload_status(response['result']['task_id'])
+    print(status)
     return len(status['result']['items'][0]['errors']) == 0
 
 
