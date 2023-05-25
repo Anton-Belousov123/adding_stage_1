@@ -28,8 +28,7 @@ def test_upload_is_ok(article, name, sku) -> bool:
     response = _upload_item(sku=sku, name=name, article=article, headers=headers_test_shop)
     time.sleep(90)
     status = _get_upload_status(response['result']['task_id'])
-    print(status)
-    return 'errors' not in status['result']['items'][0].keys()
+    return len(status['result']['items'][0]['errors']) == 0
 
 
 def upload_to_main(article, name, sku, table_name):
