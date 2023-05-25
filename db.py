@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 
 def get_element(table_name):
     conn, cur = _create_connection()
-    cur.execute(f"SELECT * FROM {table_name} WHERE stage=%s", ("upload_error_by_copy",))  # Suggested
+    cur.execute(f"SELECT * FROM {table_name} WHERE stage=%s", ("uploaded_by_copy",))  # Suggested, upload_error_by_copy
     record = cur.fetchone()
     conn.close()
     if not record: return None

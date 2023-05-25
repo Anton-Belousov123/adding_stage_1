@@ -58,7 +58,7 @@ def _upload_item(sku, name, article, headers):
             }
         ]
     }
-    response = requests.post(url, headers=headers_test_shop, data=json.dumps(data)).json()
+    response = requests.post(url, headers=headers, data=json.dumps(data)).json()
     return response
 
 
