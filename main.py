@@ -20,9 +20,9 @@ def main():
 
         if ozon.test_upload_is_ok(element[0], element[1], element[2]):
             ozon.upload_to_main(element[0], element[1], element[2], table_name)
-            db.change_status(table_name, element, 'copy_upload_success')
+            db.change_status(table_name, element, 'upload_success_using_copy')
         else:
-            db.change_status(table_name, element, 'copy_upload_error')
+            db.change_status(table_name, element, 'upload_error_using_copy')
 
 
 if __name__ == '__main__':
